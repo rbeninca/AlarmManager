@@ -55,14 +55,13 @@ public class MainActivity extends AppCompatActivity {
             PedingItent intent - Parametro com a intenção, que configura a classe a ser chamada pelo BroadCastReceiver, por isso ela tem que ter o metódo receiver implementado.
         )
 
-        Cabe resalatar que o metódo Repeating e InexaticRepeating possuem sofream mudanças no comportamento após o android 5.1, alterando o valor de repeating para 60000miliseconds
-        para valores inferiores a este valor. A justificativa para tal mudança é o exessivo consumo de recursos, de acordo com relatos esse tipo de ação faz com que alguns desenvolvedores
-        busquem formas de driblar as politicas de controle de energia do sistema, mas essas ações podem causar medidas drasticas pela playStore e Google, por isso é altamente não recomendado.
+        Cabe ressaltar que o método Repeating e InexaticRepeating possuem sofreram mudanças no comportamento após o Android 5.1, alterando o valor de repeating para 60000miliseconds
+        para valores inferiores a este valor. A justificativa para tal mudança é o excessivo consumo de recursos, de acordo com relatos esse tipo de ação faz com que alguns desenvolvedores
+        busquem formas de driblar as politicas de controle de energia do sistema, mas essas ações podem causar medidas drásticas pela playStore e Google, por isso é altamente não recomendado.
         https://commonsware.com/blog/2015/03/23/alarmmanager-regression-android-5p1.html
         https://developer.android.com/reference/android/app/AlarmManager
 
          */
-
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),1,alarmIntent);
       //  alarmManager.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),alarmIntent);
         Log.d("AlarmManagerTest","Alarme Cadastrado "+ (new Date().toString() ) );
