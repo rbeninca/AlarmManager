@@ -1,4 +1,5 @@
-
+<script src="mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 ### Descrição do Alarm Manager
 AlarmManager é uma classe do android que permite que a aplicação realize o agendamento de ações(Intent) a serem disparadas pelo sistema em *backgroud* . Estas ações são disparadas pelo sistema e não pela aplicação. Para disparar a ação o sistema envia para o ContentProvider a PedingIntent agendada que pode é interceptada pela classe BroadcastReceiver,  assim as ações a serem executadas no agendamento devem estar encapsuladas por uma classe BroadcastReceiver, que implementa o metódo onReceive.
 
