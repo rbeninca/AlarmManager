@@ -1,5 +1,5 @@
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.2/mermaid.min.js"></script>
-  <script>mermaid.initialize({startOnLoad:false});</script>
+<script src="mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 
 
 ```mermaid
