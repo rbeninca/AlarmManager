@@ -34,8 +34,8 @@ public class BroadcastReceiverAlarm extends BroadcastReceiver {
 
 
     public  void recriaAlarme(Context context){
-        AlarmManagerUtil alarmManagerController = new AlarmManagerUtil(context);
-        alarmManagerController.programaAlarme(5000,true);
+        AlarmManagerUtil alarmManagerUtil = new AlarmManagerUtil(context);
+        alarmManagerUtil.programaAlarme(5000,true);
     }
 
 }
