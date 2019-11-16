@@ -1,21 +1,4 @@
-<link rel="stylesheet" href="editormd/css/editormd.css" />
-<div id="test-editor">
-    <textarea style="display:none;">### Editor.md
 
-**Editor.md**: The open source embeddable online markdown editor, based on CodeMirror & jQuery & Marked.
-    </textarea>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="editormd/editormd.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-        var editor = editormd("test-editor", {
-            // width  : "100%",
-            // height : "100%",
-            path   : "editormd/lib/"
-        });
-    });
-</script>
 ### Descrição do Alarm Manager
 AlarmManager é uma classe do android que permite que a aplicação realize o agendamento de ações(Intent) a serem disparadas pelo sistema em *backgroud* . Estas ações são disparadas pelo sistema e não pela aplicação. Para disparar a ação o sistema envia para o ContentProvider a PedingIntent agendada que pode é interceptada pela classe BroadcastReceiver,  assim as ações a serem executadas no agendamento devem estar encapsuladas por uma classe BroadcastReceiver, que implementa o metódo onReceive.
 
