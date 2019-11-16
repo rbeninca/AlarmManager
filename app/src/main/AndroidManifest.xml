@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.rbeninca.alarmmanaget">
-    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -10,24 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivityAlarmManager">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
-
-<!--
+        <!--
     Para informarmos ao sistema que o nosso package possui um elemento BroadcastReaceiver precisamos informar o
     receiver no manifesto como exposto a seguir.
     Observe que definimos a propriedadade do receiver e seu label como nome da nossa classe.
     Além disso deve-se cadastrar filtros de intenções.
--->
-        <receiver android:name=".BroadcastReceiverAlarm" android:label="BroadcastReceiverAlarm">
+        -->
+        <receiver  android:name=".BroadcastReceiverAlarm">
+
             <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
     </application>

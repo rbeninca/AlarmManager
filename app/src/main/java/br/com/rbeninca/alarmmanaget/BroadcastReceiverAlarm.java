@@ -14,10 +14,28 @@ ser repasada ao AlarmManager, possibilitando o agendamento de execução do trec
  */
 public class BroadcastReceiverAlarm extends BroadcastReceiver {
 
-
     @Override
     public void onReceive(Context context, Intent intent) {
+        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+           /*Ao reinicar  todas alarmes são perdidos, mas podemos recria-los com a seguintes alterações
+           1)Manifesto:
+                adicionando a permissão para ouvirmos intent de boot completo e adicionamos a
+               "android.intent.action.BOOT_COMPLETED" para o nosso BroadcastReceiver.
+
+           2)Adicionando uma verificação na nossa classe Receiver,AQUI, para que quando a inteção que disparar
+           seja recriada os Alarmes.
+            */
+            Log.d("AlarmManagerTest", "StartUpBootReceiver BOOT_COMPLETED");
+            recriaAlarme(context);
+        }
         Log.d("AlarmManagerTest","Alarme disparado "+ (new Date().toString()) );
+    }
+
+
+
+    public  void recriaAlarme(Context context){
+        AlarmManagerUtil alarmManagerController = new AlarmManagerUtil(context);
+        alarmManagerController.programaAlarme(5000,true);
     }
 
 }
