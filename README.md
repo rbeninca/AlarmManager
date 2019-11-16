@@ -1,3 +1,21 @@
+<link rel="stylesheet" href="editormd/css/editormd.css" />
+<div id="test-editor">
+    <textarea style="display:none;">### Editor.md
+
+**Editor.md**: The open source embeddable online markdown editor, based on CodeMirror & jQuery & Marked.
+    </textarea>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="editormd/editormd.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var editor = editormd("test-editor", {
+            // width  : "100%",
+            // height : "100%",
+            path   : "editormd/lib/"
+        });
+    });
+</script>
 ### Descrição do Alarm Manager
 AlarmManager é uma classe do android que permite que a aplicação realize o agendamento de ações(Intent) a serem disparadas pelo sistema em *backgroud* . Estas ações são disparadas pelo sistema e não pela aplicação. Para disparar a ação o sistema envia para o ContentProvider a PedingIntent agendada que pode é interceptada pela classe BroadcastReceiver,  assim as ações a serem executadas no agendamento devem estar encapsuladas por uma classe BroadcastReceiver, que implementa o metódo onReceive.
 
@@ -11,7 +29,7 @@ o agendamento de intent é feito por meio dos metódos
 
 Mas antes de executar o agendamento com um dos métodos acimas é preciso criar uma PedingItent, para criar esta intent é necessário passar para classe o construtor de Itente qual é o nome do BroadcastReceiver que será executado, ou seja a classe que implementa o metódo on receive e estará habilitada a ouvir Intents.
 
-```java
+## ```java
   Intent   intent                     = new Intent(context, BroadcastReceiverAlarm.class);
   PendingIntent alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
 ```
